@@ -1,39 +1,27 @@
 ﻿using System;
-using Highlande.DAL.DbEntities;
+using MongoDB.Driver;
 
 namespace Highlande.DAL.Repositories
 {
-    public class RepositoryWorker 
+    public class RepositoryWorker
     {
-        private readonly DbContext context;
+        private readonly IMongoDatabase _db;
+        private const string ConnectionString = "mongodb://localhost:27017/test";
+
         private bool disposed = false;
 
         public RepositoryWorker()
         {
-            context = new DbContext();
+            var connection = new MongoUrlBuilder(ConnectionString);
+            var client = new MongoClient(ConnectionString);
+            _db = client.GetDatabase(connection.DatabaseName);
         }
         
         private UserRepository _userRepository { get; set; }
 
         public UserRepository UserRepository => _userRepository 
-            ?? (_userRepository = new UserRepository());
+            ?? (_userRepository = new UserRepository(_db));
         
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!this.disposed)
-            {
-                if (disposing)
-                {
-                    context.Dispose();
-                }
-            }
-            this.disposed = true;
-        }
         
-        ~RepositoryWorker()
-        {
-            Dispose(true);
-            //GC.SuppressFinalize(this);
-        }
     }
 }
