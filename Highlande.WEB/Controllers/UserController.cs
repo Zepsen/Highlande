@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Highlande.BLL.Interfaces;
 using Highlande.DAL.Entities;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
 
 namespace Highlande.WEB.Controllers
 {
@@ -17,35 +19,37 @@ namespace Highlande.WEB.Controllers
 
         // GET api/user
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IEnumerable<User>> Get()
         {
-
-            return new string[] { "value1", "value2" };
+            return await _service.GetAllUsers();
         }
 
         // GET api/user/5
         [HttpGet("{id}")]
-        public async Task<User> Get(int id)
+        public async Task<User> Get(string id)
         {
-            return await _service.GetUser();
+            return await _service.GetUser(id);
         }
 
         // POST api/user
         [HttpPost]
-        public void Post([FromBody]string value)
+        public async Task Post(User user)
         {
+            await _service.InsertUser(user);
         }
 
         // PUT api/user/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public async Task Put([FromBody]User user)
         {
+            await _service.UpdateUser(user);
         }
 
         // DELETE api/user/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task Delete([FromBody]User user)
         {
+            await _service.DeleteUser(user);
         }
     }
 }
