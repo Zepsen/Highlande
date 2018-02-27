@@ -1,15 +1,14 @@
 ﻿using System;
+using Highlande.DAL.Interfaces;
 using MongoDB.Driver;
 
 namespace Highlande.DAL.Repositories
 {
-    public class RepositoryWorker
+    public class RepositoryWorker : IRepositoryWorker
     {
         private readonly IMongoDatabase _db;
         private const string ConnectionString = "mongodb://localhost:27017/test";
-
-        private bool disposed = false;
-
+        
         public RepositoryWorker()
         {
             var connection = new MongoUrlBuilder(ConnectionString);

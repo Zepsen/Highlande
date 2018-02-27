@@ -1,10 +1,11 @@
-﻿using Highlande.DAL.Repositories;
+﻿using Highlande.DAL.Interfaces;
+using Highlande.DAL.Repositories;
 
 namespace Highlande.BLL.Services
 {
     public class AppService
     {
-        internal RepositoryWorker Repo;
+        internal IRepositoryWorker Repo;
 
         public AppService()
         {

@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Highlande.BLL.Interfaces;
-using Highlande.DAL;
+using Highlande.DAL.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Highlande.WEB.Controllers
@@ -29,7 +27,7 @@ namespace Highlande.WEB.Controllers
         [HttpGet("{id}")]
         public async Task<User> Get(int id)
         {
-            return await _service.GetUserAsync();
+            return await _service.GetUser();
         }
 
         // POST api/user

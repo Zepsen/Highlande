@@ -1,14 +1,12 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Highlande.BLL.Interfaces;
-using Highlande.DAL;
-using Highlande.DAL.Repositories;
+using Highlande.DAL.Entities;
 
 namespace Highlande.BLL.Services
 {
     public class UserService : AppService, IUserService
     {
-        public async Task<User> GetUserAsync()
+        public async Task<User> GetUser()
         {
             return await Repo.UserRepository.Get();
         }
