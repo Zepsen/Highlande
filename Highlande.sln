@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Highlande.WEB", "Highlande.WEB\Highlande.WEB.csproj", "{0416F41C-68A8-4C0A-BBE1-214233FB3CE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Highlande.WEB", "Highlande.WEB\Highlande.WEB.csproj", "{0416F41C-68A8-4C0A-BBE1-214233FB3CE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Highlande.BLL", "Highlande.BLL\Highlande.BLL.csproj", "{E685304D-E508-4D9E-AE31-CAA79AD5CAF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Highlande.BLL", "Highlande.BLL\Highlande.BLL.csproj", "{E685304D-E508-4D9E-AE31-CAA79AD5CAF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Highlande.DAL", "Highlande.DAL\Highlande.DAL.csproj", "{E058A7CF-D0E5-4386-BD17-BA673D5B6FED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Highlande.DAL", "Highlande.DAL\Highlande.DAL.csproj", "{E058A7CF-D0E5-4386-BD17-BA673D5B6FED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
